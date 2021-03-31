@@ -1,0 +1,15 @@
+<div>
+    <input [formControl]="control">
+</div>
+
+
+<div [ngStyle]="{'background-color': (online$ | async) ? 'green' : 'red'}">Online: {{(online$ | async)}}</div>
+
+<table class="table table-striped">
+    <tr *ngFor="let flight of flights$ | async">
+        <td>{{flight.id}}</td>
+        <td>{{flight.from}}</td>
+        <td>{{flight.to}}</td>
+        <td>{{flight.date | date:'dd.MM.yyyy'}}</td>
+    </tr>
+</table>
